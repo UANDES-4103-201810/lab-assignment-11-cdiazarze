@@ -19,7 +19,7 @@ RSpec.describe User, type: :model do
   end
 
   it "test username length" do
-    @user = build(:user, email: "usernamelengthmorethan20charachters")
+    @user = build(:user, username: "usernamelengthmorethan20charachters")
     expect(@user).to_not be_valid
   end
 

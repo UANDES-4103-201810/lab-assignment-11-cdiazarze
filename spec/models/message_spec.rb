@@ -9,13 +9,13 @@ RSpec.describe Message, type: :model do
 
   it "test owner" do
     @user = create(:user)
-    @message = create(:message, user_id: nil)
-    expect(@user2).to_not be_valid
+    @message = build(:message, user_id: nil)
+    expect(@message).to_not be_valid
   end
 
-  it "test unique email" do
+  it "test user id" do
     @user = create(:user, username: "elmismopo")
-    @message = create(:message, user_id: @user.id + 1)
-    expect(@user2).to_not be_valid
+    @message = build(:message, user_id: @user.id + 1)
+    expect(@message).to_not be_valid
   end
 end
